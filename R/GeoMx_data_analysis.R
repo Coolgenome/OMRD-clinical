@@ -44,7 +44,7 @@ r_test$FDR <- p.adjust(r_test$`Pr(>|t|)`, method = "fdr")
 r_test <- r_test[, c("Gene", "Contrast", "Estimate", "Pr(>|t|)", "FDR")]
 results <- r_test
 
-# Categorize Results based on P-value & FDR for plotting
+# Categorize Results based on P-value & logFC for plotting
 results$Color <- "NS"
 results$Color[results4$FDR < 0.1 & abs(results4$Estimate) >= 0.5] <- "FDR<0.1 & |logFC>=0.5|"
 results$invert_P <- (-log10(results$FDR)) 
