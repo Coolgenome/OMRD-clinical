@@ -59,7 +59,7 @@ ggplot(results, aes(x = Estimate, y = invert_P, color = Color,label = Gene)) +
     `NS` = "#d9d9d9"),
     guide = guide_legend(override.aes = list(size = 4))) +
   scale_y_continuous(expand = expansion(mult = c(0,0.05))) +
-  geom_text_repel(data = subset(results, (FDR<0.05 & abs(Estimate)>=1) | Gene %in% c("DUSP1","GPI","KDM3A")),
+  geom_text_repel(data = subset(results, (FDR<0.05 & abs(Estimate)>=1) | Gene %in% c("VEGFA","DUSP1","KDM3A")),
                   size = 3, point.padding = 0.2, color = "black",
                   min.segment.length = .5, box.padding = .2, lwd = 2,
                   max.overlaps = 50) +
